@@ -4,6 +4,8 @@ cache: packages
 branches:
     only:
         - master
+r_packages:
+    - rmarkdown
 
 script:
     - Rscript -e 'rmarkdown::render("example.Rmd")'
