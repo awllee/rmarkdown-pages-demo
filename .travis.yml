@@ -8,10 +8,7 @@ r_packages:
     - rmarkdown
 
 script:
-    - Rscript -e 'rmarkdown::render("example.Rmd")'
-
-before_deploy:
-    - rm .gitignore
+    - Rscript -e 'rmarkdown::render("example.Rmd", output_dir="public")'
 
 deploy:
     provider: pages
@@ -19,4 +16,5 @@ deploy:
     github_token: $GITHUB_PAT
     on:
         branch: master
+    local_dir: public
     target_branch: gh-pages
