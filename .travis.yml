@@ -10,6 +10,9 @@ r_packages:
 script:
     - Rscript -e 'rmarkdown::render("example.Rmd")'
 
+before_deploy:
+    - rm .gitignore
+
 deploy:
     provider: pages
     skip_cleanup: true
